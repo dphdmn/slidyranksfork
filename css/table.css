@@ -95,32 +95,34 @@
     max-width: 100px;
 }
 
-/* tiers */
+/* tiers with better matching text colors */
 
-[tier="ascended"]        { background-color: #890000; }
-[tier="grandmaster-iii"] { background-color: #ff00ff; }
-[tier="grandmaster-ii"]  { background-color: #ff66ff; }
-[tier="grandmaster-i"]   { background-color: #ff92ff; }
-[tier="master-iii"]      { background-color: #8000ff; }
-[tier="master-ii"]       { background-color: #9f3dff; }
-[tier="master-i"]        { background-color: #ad7eff; }
-[tier="diamond-iii"]     { background-color: #0080ff; }
-[tier="diamond-ii"]      { background-color: #47a1fb; }
-[tier="diamond-i"]       { background-color: #70b9ff; }
-[tier="platinum-iii"]    { background-color: #00d269; }
-[tier="platinum-ii"]     { background-color: #79e389; }
-[tier="platinum-i"]      { background-color: #b9ffa3; }
-[tier="gold-iii"]        { background-color: #ffd700; }
-[tier="gold-ii"]         { background-color: #ffe85f; }
-[tier="gold-i"]          { background-color: #fffa74; }
-[tier="silver-iii"]      { background-color: #c0c0c0; }
-[tier="silver-ii"]       { background-color: #d9d9d9; }
-[tier="silver-i"]        { background-color: #e8e8e8; }
-[tier="bronze-iii"]      { background-color: #cd7f32; }
-[tier="bronze-ii"]       { background-color: #e39b53; }
-[tier="bronze-i"]        { background-color: #ffb368; }
-[tier="beginner"]        { background-color: #c9daf8; }
-[tier="unranked"]        { background-color: #666666; }
+[tier="ascended"]        { background-color: #890000; color: #ffd6d6; } /* light soft pink */
+[tier="grandmaster-iii"] { background-color: #ff00ff; color: #330033; } /* dark purple */
+[tier="grandmaster-ii"]  { background-color: #ff66ff; color: #3a003a; } /* muted plum */
+[tier="grandmaster-i"]   { background-color: #ff92ff; color: #400040; } 
+[tier="master-iii"]      { background-color: #8000ff; color: #f0e6ff; } /* light lavender */
+[tier="master-ii"]       { background-color: #9f3dff; color: #f6e8ff; } 
+[tier="master-i"]        { background-color: #ad7eff; color: #2e004f; } /* deep indigo */
+[tier="diamond-iii"]     { background-color: #0080ff; color: #e6f5ff; } /* soft ice blue */
+[tier="diamond-ii"]      { background-color: #47a1fb; color: #002b4d; } /* navy tint */
+[tier="diamond-i"]       { background-color: #70b9ff; color: #003366; } 
+[tier="platinum-iii"]    { background-color: #00d269; color: #002e1a; } /* forest green */
+[tier="platinum-ii"]     { background-color: #79e389; color: #003b1f; } 
+[tier="platinum-i"]      { background-color: #b9ffa3; color: #1a3300; } 
+[tier="gold-iii"]        { background-color: #ffd700; color: #4d3b00; } /* rich brown */
+[tier="gold-ii"]         { background-color: #ffe85f; color: #4d4000; } 
+[tier="gold-i"]          { background-color: #fffa74; color: #333300; } 
+[tier="silver-iii"]      { background-color: #c0c0c0; color: #333333; } /* charcoal gray */
+[tier="silver-ii"]       { background-color: #d9d9d9; color: #444444; } 
+[tier="silver-i"]        { background-color: #e8e8e8; color: #555555; } 
+[tier="bronze-iii"]      { background-color: #cd7f32; color: #1c0d00; } /* dark espresso */
+[tier="bronze-ii"]       { background-color: #e39b53; color: #2e1500; } 
+[tier="bronze-i"]        { background-color: #ffb368; color: #402000; } 
+[tier="beginner"]        { background-color: #c9daf8; color: #0f1f33; } /* deep navy */
+[tier="unranked"]        { background-color: #666666; color: #f0f0f0; } /* light gray */
+
+
 
 [tierf="ascended"]        { color: #890000; }
 [tierf="grandmaster-iii"] { color: #ff00ff; }
