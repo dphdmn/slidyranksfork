@@ -10,22 +10,21 @@ function decompress(str){
     return decoder.decode(arr);
 }
 
-function format(time){
-    if(time == -1){
+function format(time) {
+    if (time == -1) {
         return "";
     }
 
     var t = time;
-    var seconds = Math.floor(t/1000);    t %= 1000;
-    var millis  = t;
+    var seconds = Math.floor(t / 1000);
+    var millis = t % 1000;
 
-    if(time < 1000){
-        return "0." + millis.toString().padStart(3, "0");
-    }
-    else {
-        return seconds + "." +
-               millis.toString().padStart(3, "0");
-    }
+
+    var result = seconds + "." + millis.toString().padStart(3, "0");
+    // Remove unnecessary trailing zeros after the decimal point
+    result = result.replace(/\.?0+$/, ''); // Remove trailing zeros & dot if necessary
+    return result;
+    
 }
 
 function result_tier(category, time){
