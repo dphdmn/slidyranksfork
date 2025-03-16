@@ -134,7 +134,6 @@ function populate_table(table){
             if(user[2] < tier["limit"] || user[2] == 0){ // second condition should not matter, but i want to be sure
                 break;
             }
-            console.log(user[0], best_result_tier(user))
             if(best_result_tier(user) < i)break; // best tier isn't high enough
 
             // create a new row and the cells for the username, place, power
