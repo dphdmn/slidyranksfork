@@ -17,8 +17,8 @@
 }
 
 :root {
-  --header_height: 60px;
-  --header_clr: 213 11% 19%;
+  --header_height: 50px;
+  --header_clr: 0, 0%, 10%;
 }
 ::selection {
   background: #2555be;
@@ -26,7 +26,7 @@
 }
 
 body {
-  background-color: rgb(63, 72, 83);
+  background-color: rgb(20, 20, 20);
 }
 
 .overflow-hidden {
