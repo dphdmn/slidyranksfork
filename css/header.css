@@ -70,6 +70,10 @@
     display: none;
 }
 
+.page-header #switch-reqs {
+    display: none;
+}
+
 .page-header label {
     height: 50%;
     aspect-ratio: 2/1;

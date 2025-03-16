@@ -61,3 +61,60 @@ function changeTable(tier_table){
         }
     });
 }
+
+let switchBtnReqs = $("#switch-reqs");
+
+switchBtnReqs.on("change", function(){
+    toggleTableVisibility()
+});
+
+function toggleTableVisibility() {
+    // Get all tables on the page
+    const tables = document.querySelectorAll('table');
+
+    // Check if the function has been called before
+    const isToggled = toggleTableVisibility.toggled;
+
+    if (!isToggled) {
+        // First call: Hide all thead elements except for the top table
+        tables.forEach((table, index) => {
+            const thead = table.querySelector('thead');
+            if (thead) {
+                if (index === 0) {
+                    // For the top table, hide the <tr class="req-row"> element
+                    const reqRow = table.querySelector('tr.req-row');
+                    if (reqRow) {
+                        reqRow.style.display = 'none';
+                    }
+                } else {
+                    // For other tables, hide the entire thead
+                    thead.style.display = 'none';
+                }
+            }
+        });
+
+        // Mark the function as toggled
+        toggleTableVisibility.toggled = true;
+    } else {
+        // Second call: Restore the original state
+        tables.forEach((table, index) => {
+            const thead = table.querySelector('thead');
+            if (thead) {
+                if (index === 0) {
+                    // For the top table, restore the <tr class="req-row"> element
+                    const reqRow = table.querySelector('tr.req-row');
+                    if (reqRow) {
+                        reqRow.style.display = '';
+                    }
+                } else {
+                    // For other tables, restore the entire thead
+                    thead.style.display = '';
+                }
+            }
+        });
+
+        // Mark the function as not toggled
+        toggleTableVisibility.toggled = false;
+    }
+}
+toggleTableVisibility.toggled = false;
