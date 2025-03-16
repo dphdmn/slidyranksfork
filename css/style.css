@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"); /* google icons */
+@import url("remixicon.css"); /* remix icons */
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap"); /* font family "Commissioner" */
+@import url("header.css");
+@import url("menu.css");
+@import url("scrollbar.css");
+@import url("table.css");
+
+* {
+  font-weight: lighter;
+  font-family: "Commissioner", sans-serif;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-spacing: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --header_height: 60px;
+  --header_clr: 213 11% 19%;
+}
+::selection {
+  background: #2555be;
+  color: white;
+}
+
+body {
+  background-color: rgb(63, 72, 83);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

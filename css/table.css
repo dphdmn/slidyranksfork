@@ -1,0 +1,127 @@
+/* whole table */
+
+.results-table {
+    padding-top: var(--header_height);
+    width: max-content;
+    margin: auto;
+    text-align: center;
+}
+
+.table-wrapper {
+    width: 100%;
+}
+
+.table-wrapper > table {
+    width: 100%;
+}
+
+.results-table td {
+    padding: 0 4px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+/* table header */
+
+.table-header {
+    position: sticky;
+    top: var(--header_height);
+    z-index: 1;
+    color: rgb(220, 220, 220);
+    background-color: #1b1e24;
+}
+
+.tier-row td {
+    height: 50px;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.req-row td {
+    width: max-content;
+    min-width: 50px;
+    height: 40px;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+.events-row {
+    height: 50px;
+    color: rgb(170, 170, 170);
+}
+
+/* player rows */
+
+.player-row {
+    height: 40px;
+}
+
+.player-row td[onclick] {
+    cursor: pointer;
+    text-decoration: underline;
+    transition: .3s;
+    position: relative;
+}
+
+.player-row td[onclick]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0003;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0 at 0 0);
+    transition: .3s;
+}
+
+.player-row td[onclick]:hover::before {
+    clip-path: circle(140% at 0 0);
+}
+
+.power_req_reached {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.player, .player-place, .player-power {
+    font-weight: 700 !important;
+}
+
+.player {
+    font-size: 1.05em;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.player-row:nth-child(odd) {
+    opacity: 0.9;
+}
+
+/* tiers */
+
+[tier="ascended"]        { background-color: #890000; }
+[tier="grandmaster-iii"] { background-color: #ff00ff; }
+[tier="grandmaster-ii"]  { background-color: #ff66ff; }
+[tier="grandmaster-i"]   { background-color: #ff92ff; }
+[tier="master-iii"]      { background-color: #8000ff; }
+[tier="master-ii"]       { background-color: #9f3dff; }
+[tier="master-i"]        { background-color: #ad7eff; }
+[tier="diamond-iii"]     { background-color: #0080ff; }
+[tier="diamond-ii"]      { background-color: #47a1fb; }
+[tier="diamond-i"]       { background-color: #70b9ff; }
+[tier="platinum-iii"]    { background-color: #00d269; }
+[tier="platinum-ii"]     { background-color: #79e389; }
+[tier="platinum-i"]      { background-color: #b9ffa3; }
+[tier="gold-iii"]        { background-color: #ffd700; }
+[tier="gold-ii"]         { background-color: #ffe85f; }
+[tier="gold-i"]          { background-color: #fffa74; }
+[tier="silver-iii"]      { background-color: #c0c0c0; }
+[tier="silver-ii"]       { background-color: #d9d9d9; }
+[tier="silver-i"]        { background-color: #e8e8e8; }
+[tier="bronze-iii"]      { background-color: #cd7f32; }
+[tier="bronze-ii"]       { background-color: #e39b53; }
+[tier="bronze-i"]        { background-color: #ffb368; }
+[tier="beginner"]        { background-color: #c9daf8; }
+[tier="unranked"]        { background-color: #666666; }
