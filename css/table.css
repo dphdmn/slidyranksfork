@@ -43,6 +43,7 @@
     width: max-content;
     font-size: 1.2rem;
     min-width: 60px;
+    max-width: 60px;
     height: 60px;
     font-weight: bold;
     letter-spacing: .5px;
@@ -93,8 +94,8 @@
 
 .player {
     font-size: 1.05em;
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 100px !important;
+    max-width: 100px !important;
 }
 
 /* tiers with better matching text colors */
