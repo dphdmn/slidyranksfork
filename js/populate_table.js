@@ -76,17 +76,14 @@ function populate_table(table){
 
         // set up the header rows
         var tier_head = document.createElement("thead"); // header containing the following three rows
-        var tier_name_row = document.createElement("tr"); // row containing the name of the tier
         var tier_req_row = document.createElement("tr"); // row containing the results required for the tier
         var tier_events_row = document.createElement("tr"); // row containing names of the categories
 
         tier_head.className = "table-header";
-        tier_name_row.className = "tier-row";
         tier_req_row.className = "req-row";
         tier_events_row.className = "events-row";
 
         tier_table.appendChild(tier_head);
-        tier_head.appendChild(tier_name_row);
         tier_head.appendChild(tier_req_row);
         tier_head.appendChild(tier_events_row);
 
@@ -96,19 +93,22 @@ function populate_table(table){
         // fill up the whole width of the table (columns = username, place, power, categories)
         tier_name_div.colSpan = num_categories+3;
         tier_name_div.textContent = tier["name"];
-
-        tier_name_row.appendChild(tier_name_div);
+        const name = tier["name"].toLowerCase().replace(" ","-");
 
         // tier requirements row
         for(var j=0; j<3; j++){
-            tier_req_row.appendChild(document.createElement("td"));
+            const tdel = document.createElement("td");
+            tdel.setAttribute("tierf", name);
+            tier_req_row.appendChild(tdel);
         }
+        tier_req_row.children[0].textContent = tier["name"];
         tier_req_row.children[1].textContent = tier["power"];
         tier_req_row.children[2].textContent = tier["limit"];
 
         for(var j=0; j<num_categories; j++){
             var div = document.createElement("td");
             div.textContent = format(tier["times"][j]);
+            div.setAttribute("tierf", name);
             tier_req_row.appendChild(div);
         }
 
