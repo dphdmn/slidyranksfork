@@ -122,7 +122,7 @@ function populate_table(table){
 
         for(var j=0; j<num_categories; j++){
             var div = document.createElement("td");
-            div.textContent = categories[j];
+            div.innerHTML = categories[j].replace(/ /g, '<br>');
             tier_events_row.appendChild(div);
         }
 
