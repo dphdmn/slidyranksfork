@@ -1,26 +1,29 @@
-import("https://kit.fontawesome.com/9fa2f75402.js") /* font awesome icons */
+import("https://kit.fontawesome.com/9fa2f75402.js"); /* font awesome icons */
 
-let menuBtn = $(".menu-btn");
-let menu = $(".menu");
-let menuIcon = $(".menu-icon");
-let menuToggle = () => {
-    menu.toggleClass("menu-active");
-    menuIcon.toggleClass("menu-icon-open");
-    $("body").toggleClass("overflow-hidden");
-}
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu");
+const menuIcon = document.querySelector(".menu-icon");
 
-// when clicking outside the menu to close it
-$(document).click((e) => {
-	if (menu.hasClass("menu-active")) {
-  	    menuToggle();
+const menuToggle = () => {
+    menu.classList.toggle("menu-active");
+    menuIcon.classList.toggle("menu-icon-open");
+    document.body.classList.toggle("overflow-hidden");
+};
+
+// Click outside menu to close
+document.addEventListener("click", (e) => {
+    if (menu.classList.contains("menu-active")) {
+        menuToggle();
     }
 });
 
-menuBtn.click((e) => {
+// Prevent closing when clicking menu button
+menuBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     menuToggle();
 });
 
-menu.click((e) => {
+// Prevent closing when clicking inside menu
+menu.addEventListener("click", (e) => {
     e.stopPropagation();
 });
