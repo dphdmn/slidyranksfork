@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.page-header button:hover {
+.menu-btn:hover {
     filter: brightness(85%);
 }
 
@@ -47,6 +47,7 @@
 /* date button */
 .page-header .date-button {
     flex-grow: 1;
+    cursor: default;
 }
 
 /* calendar */
