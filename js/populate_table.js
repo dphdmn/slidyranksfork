@@ -60,9 +60,42 @@ function populate_table(table){
     while(results_table.hasChildNodes()){
         results_table.removeChild(results_table.firstChild);
     }
-
+    // Insert wrapper div before results_table
     // which user do we need to add to the table next?
     var next_user = 0;
+
+        // Categories table
+        var tier_wrapper = document.createElement("div");
+        tier_wrapper.className = "results-table";
+        tier_wrapper.style.position = "sticky";
+        tier_wrapper.style.top = "0";
+        tier_wrapper.style.zIndex = "100";
+        tier_wrapper.style.paddingTop = "var(--header_height)";
+        tier_wrapper.style.marginBottom = "calc(-1 * var(--header_height))";
+        var tier_table = document.createElement("table");
+        tier_wrapper.appendChild(tier_table);
+        results_table.parentNode.insertBefore(tier_wrapper, results_table);
+        var tier_head = document.createElement("thead");
+        var tier_events_row = document.createElement("tr");
+        tier_head.className = "table-header";
+        tier_events_row.className = "events-row";
+        tier_table.appendChild(tier_head);
+        tier_head.appendChild(tier_events_row);
+        tier_table.style.position = 'sticky';
+        tier_head.style.zIndex = 2;
+        for(var j=0; j<3; j++){
+            tier_events_row.appendChild(document.createElement("td"));
+        }
+        tier_events_row.children[0].textContent = "Name";
+        tier_events_row.children[0].style.minWidth = "100px";
+        tier_events_row.children[1].textContent = "Place";
+        tier_events_row.children[2].textContent = "Power";
+        for(var j=0; j<num_categories; j++){
+            var div = document.createElement("td");
+            div.innerHTML = categories[j].replace(/ /g, '<br>');
+            tier_events_row.appendChild(div);
+        }
+        
 
     for(var i=num_tiers-1; i>0; i--){
         const tier = tiers[i];
@@ -81,10 +114,12 @@ function populate_table(table){
         tier_head.className = "table-header";
         tier_req_row.className = "req-row";
         tier_events_row.className = "events-row";
-
         tier_table.appendChild(tier_head);
+        
+        tier_events_row.style.display = 'none';
         tier_head.appendChild(tier_req_row);
         tier_head.appendChild(tier_events_row);
+
 
         // tier name row
         var tier_name_div = document.createElement("td");
@@ -100,6 +135,7 @@ function populate_table(table){
             tdel.setAttribute("tierf", name);
             tier_req_row.appendChild(tdel);
         }
+
         tier_req_row.children[0].innerHTML = tier["name"].replace(/ /g, '<br>');
         tier_req_row.children[0].style.minWidth = "100px";
         tier_req_row.children[1].textContent = tier["power"];
