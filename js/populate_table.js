@@ -101,6 +101,7 @@ function populate_table(table){
             tier_req_row.appendChild(tdel);
         }
         tier_req_row.children[0].innerHTML = tier["name"].replace(/ /g, '<br>');
+        tier_req_row.children[0].style.minWidth = "100px";
         tier_req_row.children[1].textContent = tier["power"];
         tier_req_row.children[2].textContent = tier["limit"];
 
